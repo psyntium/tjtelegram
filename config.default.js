@@ -19,8 +19,8 @@ exports.credentials.telegram = {
 // Watson Speech To Text
 // replace the value below with the Waton's Speech to Text token you have received from @BotFather 
 exports.credentials.speech_to_text = {
-    password: "",
-    username: ""
+    username: "",
+    password: ""
 }
 
 // Watson Text to Speech
@@ -29,3 +29,13 @@ exports.credentials.text_to_speech = {
     username: "",
     password: ""
 }
+
+// Watson Conversation
+// https://www.ibm.com/watson/developercloud/conversation.html
+exports.credentials.conversation = {
+    username: "",
+    password: ""
+};
+
+// replace with the workspace identifier of your conversation
+exports.conversationWorkspaceId = ""; 

@@ -24,8 +24,13 @@ const temp = require('temp').track();
 // obtain our credentials from config.js
 const credentials = config.credentials;
 
+// obtain user-specific config
+var WORKSPACEID = config.conversationWorkspaceId;
+
 // these are the hardware capabilities that TJ needs for this recipe
-var hardware = ['speaker'];
+var hardware = ['speaker', 'led', 'servo'];
+// disable servo if running locally on pc
+// var hardware = ['speaker', 'led'];
 
 // set up TJBot's configuration
 var tjConfig = {
@@ -45,8 +50,13 @@ telegram.on("text", (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
 
-    tj.speak(text);
-    telegramSendVoice(chatId, text);
+    // send to the conversation service
+    tj.converse(WORKSPACEID, text, function (response) {
+        tj.speak(response.description);
+        telegramSendVoice(chatId, response.description);
+
+        runAction(response.object.output.action);
+    });
 });
 
 telegram.on("voice", (msg) => {
@@ -54,50 +64,46 @@ telegram.on("voice", (msg) => {
     const chatId = msg.chat.id;
 
     telegram.getFileLink(msg.voice.file_id)
-    .then(function (voiceUrl) {
-        temp.open('tjbot', function (err, info) {
-            if (err)
-                return console.log("error: could not open temporary file for writing at path: " + info.path);
+        .then(function (voiceUrl) {
+            temp.open('tjbot', function (err, info) {
+                if (err)
+                    return console.log("error: could not open temporary file for writing at path: " + info.path);
 
-            request(voiceUrl).pipe(fs.createWriteStream(info.path))
-            .on('finish', function () {
-                var params = {
-                    audio: fs.createReadStream(info.path),
-                    content_type: 'audio/ogg',
-                    smart_formatting: true
-                };
-                tj._stt.recognize(params, function (err, transcript) {
-                    if (err)
-                        return console.log("error: ", + err);
+                request(voiceUrl).pipe(fs.createWriteStream(info.path))
+                    .on('finish', function () {
+                        var params = {
+                            audio: fs.createReadStream(info.path),
+                            content_type: 'audio/ogg',
+                            smart_formatting: true
+                        };
+                        tj._stt.recognize(params, function (err, transcript) {
+                            if (err)
+                                return console.log("error: ", + err);
 
-                    try {
-                        var text = transcript.results[0].alternatives[0].transcript;
+                            try {
+                                var text = transcript.results[0].alternatives[0].transcript;
+                                console.log("STT transcipt: " + text);
 
-                        console.log("STT transcipt: " + text);
+                                // send to the conversation service
+                                tj.converse(WORKSPACEID, text, function (response) {
+                                    tj.speak(response.description);
+                                    telegramSendVoice(chatId, response.description);
 
-                        tj.speak(text);
-                        telegramSendVoice(chatId, text);
-                    } catch (err) {
-                        console.log("error: ", err);
-                    }
-                });
-            })
-            .on("error", function (err) {
-                console.log("error request", err);
+                                    runAction(response.object.output.action);
+                                });
+                            } catch (err) {
+                                console.log("error: ", err);
+                            }
+                        });
+                    })
+                    .on("error", function (err) {
+                        console.log("error request", err);
+                    });
             });
-        });
-    })
-    .catch(function (err) {
-        console.log("error: ", err);
-    })
-
-    // tj.converse(WORKSPACEID, resp, function (response) {
-    //     // speak the result
-    //     tj.speak(response.description);
-    // });
-    // send back the matched "whatever" to the chat 
-    // telegram.sendMessage(chatId, "voice received");
-
+        })
+        .catch(function (err) {
+            console.log("error: ", err);
+        })
 });
 
 function telegramSendVoice(chatId, text) {
@@ -110,14 +116,38 @@ function telegramSendVoice(chatId, text) {
             return console.log("error: could not open temporary file for writing at path: " + info.path);
 
         tj._tts.synthesize(params).pipe(fs.createWriteStream(info.path))
-        .on('finish', function () {
-            telegram.sendVoice(chatId, info.path)
-            .catch(function (err) {
-                console.log("error sendVoice: ", err);
+            .on('finish', function () {
+                telegram.sendVoice(chatId, info.path)
+                    .catch(function (err) {
+                        console.log("error sendVoice: ", err);
+                    });
+            })
+            .on("error", function (err) {
+                console.log("error synthesize", err);
             });
-        })
-        .on("error", function (err) {
-            console.log("error synthesize", err);
-        });
     });
+}
+
+function runAction(action) {
+    if (action) {
+        if (action.led == "on") {
+            tj.shine(action.color || "white");
+        } else if (action.led == "off") {
+            tj.shine("off");
+        }
+
+        if (action.servo) {
+            if (action.movement == "armback") {
+                tj.armBack();
+            } else if (action.movement == "raisearm") {
+                tj.raiseArm();
+            } else if (action.movement == "lowerarm") {
+                tj.lowerArm();
+            } else if (action.movement == "wave") {
+                tj.wave();
+            } else {
+                tj.wave();
+            }
+        }
+    }
 }

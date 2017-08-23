@@ -1,0 +1,709 @@
+{
+    "name": "TJ Bot",
+    "created": "2017-08-17T02:44:01.735Z",
+    "intents": [
+        {
+            "intent": "goodbye",
+            "created": "2017-08-17T02:54:05.130Z",
+            "updated": "2017-08-17T02:54:47.377Z",
+            "examples": [
+                {
+                    "text": "good bye",
+                    "created": "2017-08-17T02:54:08.251Z",
+                    "updated": "2017-08-17T02:54:08.251Z"
+                },
+                {
+                    "text": "goodbye",
+                    "created": "2017-08-17T02:54:10.087Z",
+                    "updated": "2017-08-17T02:54:10.087Z"
+                },
+                {
+                    "text": "so long",
+                    "created": "2017-08-17T02:54:11.592Z",
+                    "updated": "2017-08-17T02:54:11.592Z"
+                },
+                {
+                    "text": "see you later",
+                    "created": "2017-08-17T02:54:14.694Z",
+                    "updated": "2017-08-17T02:54:14.694Z"
+                },
+                {
+                    "text": "later dude",
+                    "created": "2017-08-17T02:54:19.194Z",
+                    "updated": "2017-08-17T02:54:19.194Z"
+                },
+                {
+                    "text": "See you next time",
+                    "created": "2017-08-17T02:54:37.402Z",
+                    "updated": "2017-08-17T02:54:37.402Z"
+                },
+                {
+                    "text": "Have a good one",
+                    "created": "2017-08-17T02:54:47.377Z",
+                    "updated": "2017-08-17T02:54:47.377Z"
+                }
+            ],
+            "description": null
+        },
+        {
+            "intent": "control_led",
+            "created": "2017-08-17T02:44:45.985Z",
+            "updated": "2017-08-17T02:45:26.692Z",
+            "examples": [
+                {
+                    "text": "turn on the light",
+                    "created": "2017-08-17T02:44:51.803Z",
+                    "updated": "2017-08-17T02:44:51.803Z"
+                },
+                {
+                    "text": "turn on red light",
+                    "created": "2017-08-17T02:45:00.494Z",
+                    "updated": "2017-08-17T02:45:00.494Z"
+                },
+                {
+                    "text": "blink blue light",
+                    "created": "2017-08-17T02:45:03.498Z",
+                    "updated": "2017-08-17T02:45:03.498Z"
+                },
+                {
+                    "text": "turn off the light",
+                    "created": "2017-08-17T02:45:14.589Z",
+                    "updated": "2017-08-17T02:45:14.589Z"
+                },
+                {
+                    "text": "switch off the light",
+                    "created": "2017-08-17T02:45:18.163Z",
+                    "updated": "2017-08-17T02:45:18.163Z"
+                },
+                {
+                    "text": "change light to green",
+                    "created": "2017-08-17T02:45:21.897Z",
+                    "updated": "2017-08-17T02:45:21.897Z"
+                },
+                {
+                    "text": "change light to blue",
+                    "created": "2017-08-17T02:45:26.692Z",
+                    "updated": "2017-08-17T02:45:26.692Z"
+                }
+            ],
+            "description": null
+        },
+        {
+            "intent": "control_servo",
+            "created": "2017-08-17T02:45:47.198Z",
+            "updated": "2017-08-17T02:48:58.537Z",
+            "examples": [
+                {
+                    "text": "wave once",
+                    "created": "2017-08-17T02:45:57.123Z",
+                    "updated": "2017-08-17T02:45:57.123Z"
+                },
+                {
+                    "text": "wave twice",
+                    "created": "2017-08-17T02:45:59.826Z",
+                    "updated": "2017-08-17T02:45:59.826Z"
+                },
+                {
+                    "text": "put your hands up",
+                    "created": "2017-08-17T02:46:05.964Z",
+                    "updated": "2017-08-17T02:46:05.964Z"
+                },
+                {
+                    "text": "can you raise your arm?",
+                    "created": "2017-08-17T02:48:58.537Z",
+                    "updated": "2017-08-17T02:48:58.537Z"
+                }
+            ],
+            "description": null
+        },
+        {
+            "intent": "hello",
+            "created": "2017-08-17T02:49:31.879Z",
+            "updated": "2017-08-17T02:53:57.986Z",
+            "examples": [
+                {
+                    "text": "good morning",
+                    "created": "2017-08-17T02:49:52.808Z",
+                    "updated": "2017-08-17T02:49:52.808Z"
+                },
+                {
+                    "text": "good afternoon",
+                    "created": "2017-08-17T02:51:26.330Z",
+                    "updated": "2017-08-17T02:51:26.330Z"
+                },
+                {
+                    "text": "good evening",
+                    "created": "2017-08-17T02:51:29.344Z",
+                    "updated": "2017-08-17T02:51:29.344Z"
+                },
+                {
+                    "text": "howdy",
+                    "created": "2017-08-17T02:51:32.904Z",
+                    "updated": "2017-08-17T02:51:32.904Z"
+                },
+                {
+                    "text": "hello",
+                    "created": "2017-08-17T02:52:00.664Z",
+                    "updated": "2017-08-17T02:52:00.664Z"
+                },
+                {
+                    "text": "selamat pagi",
+                    "created": "2017-08-17T02:52:04.442Z",
+                    "updated": "2017-08-17T02:52:04.442Z"
+                },
+                {
+                    "text": "hey there",
+                    "created": "2017-08-17T02:53:03.453Z",
+                    "updated": "2017-08-17T02:53:03.453Z"
+                },
+                {
+                    "text": "Hey! What's up?",
+                    "created": "2017-08-17T02:53:20.190Z",
+                    "updated": "2017-08-17T02:53:20.190Z"
+                },
+                {
+                    "text": "What's going on?",
+                    "created": "2017-08-17T02:53:11.086Z",
+                    "updated": "2017-08-17T02:53:22.897Z"
+                },
+                {
+                    "text": "How are you doing today?",
+                    "created": "2017-08-17T02:53:32.101Z",
+                    "updated": "2017-08-17T02:53:32.101Z"
+                },
+                {
+                    "text": "How's everything?",
+                    "created": "2017-08-17T02:53:43.210Z",
+                    "updated": "2017-08-17T02:53:43.210Z"
+                }
+            ],
+            "description": null
+        }
+    ],
+    "updated": "2017-08-23T08:38:27.363Z",
+    "entities": [
+        {
+            "entity": "movements",
+            "values": [
+                {
+                    "value": "lowerarm",
+                    "created": "2017-08-23T07:52:42.298Z",
+                    "updated": "2017-08-23T07:52:56.982Z",
+                    "metadata": null,
+                    "synonyms": [
+                        "downward",
+                        "down",
+                        "lower",
+                        "lower arm"
+                    ]
+                },
+                {
+                    "value": "wave",
+                    "created": "2017-08-23T07:53:01.760Z",
+                    "updated": "2017-08-23T07:53:33.619Z",
+                    "metadata": null,
+                    "synonyms": [
+                        "greet",
+                        "move",
+                        "shake",
+                        "wave"
+                    ]
+                },
+                {
+                    "value": "raisearm",
+                    "created": "2017-08-23T07:52:20.624Z",
+                    "updated": "2017-08-23T07:52:37.520Z",
+                    "metadata": null,
+                    "synonyms": [
+                        "up",
+                        "upward",
+                        "raise",
+                        "raise arm"
+                    ]
+                },
+                {
+                    "value": "armback",
+                    "created": "2017-08-23T07:51:56.781Z",
+                    "updated": "2017-08-23T07:52:10.902Z",
+                    "metadata": null,
+                    "synonyms": [
+                        "backward",
+                        "arm back",
+                        "back"
+                    ]
+                }
+            ],
+            "created": "2017-08-23T07:51:51.944Z",
+            "updated": "2017-08-23T07:53:33.619Z",
+            "metadata": null,
+            "description": null,
+            "fuzzy_match": true
+        },
+        {
+            "entity": "colors",
+            "values": [
+                {
+                    "value": "green",
+                    "created": "2017-08-23T08:08:34.318Z",
+                    "updated": "2017-08-23T08:08:34.431Z",
+                    "metadata": null,
+                    "synonyms": []
+                },
+                {
+                    "value": "black",
+                    "created": "2017-08-23T08:09:25.204Z",
+                    "updated": "2017-08-23T08:09:25.204Z",
+                    "metadata": null,
+                    "synonyms": []
+                },
+                {
+                    "value": "white",
+                    "created": "2017-08-23T08:09:22.616Z",
+                    "updated": "2017-08-23T08:09:22.616Z",
+                    "metadata": null,
+                    "synonyms": []
+                },
+                {
+                    "value": "pink",
+                    "created": "2017-08-23T08:08:55.186Z",
+                    "updated": "2017-08-23T08:08:55.251Z",
+                    "metadata": null,
+                    "synonyms": []
+                },
+                {
+                    "value": "yellow",
+                    "created": "2017-08-23T08:08:42.130Z",
+                    "updated": "2017-08-23T08:08:42.176Z",
+                    "metadata": null,
+                    "synonyms": []
+                },
+                {
+                    "value": "purple",
+                    "created": "2017-08-23T08:08:44.965Z",
+                    "updated": "2017-08-23T08:08:45.013Z",
+                    "metadata": null,
+                    "synonyms": []
+                },
+                {
+                    "value": "red",
+                    "created": "2017-08-23T08:08:28.807Z",
+                    "updated": "2017-08-23T08:08:31.571Z",
+                    "metadata": null,
+                    "synonyms": []
+                },
+                {
+                    "value": "blue",
+                    "created": "2017-08-23T08:08:37.048Z",
+                    "updated": "2017-08-23T08:08:37.567Z",
+                    "metadata": null,
+                    "synonyms": []
+                }
+            ],
+            "created": "2017-08-23T08:08:27.120Z",
+            "updated": "2017-08-23T08:09:25.204Z",
+            "metadata": null,
+            "description": null
+        },
+        {
+            "entity": "on_off",
+            "values": [
+                {
+                    "value": "on",
+                    "created": "2017-08-23T08:10:36.584Z",
+                    "updated": "2017-08-23T08:11:49.072Z",
+                    "metadata": null,
+                    "synonyms": [
+                        "open",
+                        "buka",
+                        "pasang",
+                        "mula",
+                        "on",
+                        "start",
+                        "begin",
+                        "ok"
+                    ]
+                },
+                {
+                    "value": "off",
+                    "created": "2017-08-23T08:11:07.881Z",
+                    "updated": "2017-08-23T08:11:24.602Z",
+                    "metadata": null,
+                    "synonyms": [
+                        "cancel",
+                        "no",
+                        "mati",
+                        "tutup",
+                        "henti",
+                        "stop",
+                        "off"
+                    ]
+                }
+            ],
+            "created": "2017-08-23T08:10:36.043Z",
+            "updated": "2017-08-23T08:11:49.072Z",
+            "metadata": null,
+            "description": null,
+            "fuzzy_match": true
+        }
+    ],
+    "language": "en",
+    "metadata": {
+        "api_version": {
+            "major_version": "v1",
+            "minor_version": "2017-05-26"
+        }
+    },
+    "description": "TJ Bot conversations with LED & Servo actions",
+    "dialog_nodes": [
+        {
+            "title": null,
+            "output": {},
+            "parent": null,
+            "context": null,
+            "created": "2017-08-23T07:35:13.899Z",
+            "updated": "2017-08-23T08:12:49.282Z",
+            "metadata": null,
+            "next_step": {
+                "behavior": "jump_to",
+                "selector": "condition",
+                "dialog_node": "node_11_1503475926867"
+            },
+            "conditions": "#control_led",
+            "description": null,
+            "dialog_node": "Lights On",
+            "previous_sibling": "Goodbye"
+        },
+        {
+            "title": null,
+            "output": {},
+            "parent": null,
+            "context": null,
+            "created": "2017-08-23T07:53:58.880Z",
+            "updated": "2017-08-23T07:57:56.255Z",
+            "metadata": null,
+            "next_step": {
+                "behavior": "jump_to",
+                "selector": "condition",
+                "dialog_node": "node_7_1503474908716"
+            },
+            "conditions": "#control_servo",
+            "description": null,
+            "dialog_node": "Move Arm",
+            "previous_sibling": "Anything else"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [],
+                    "selection_policy": "sequential"
+                }
+            },
+            "parent": null,
+            "context": null,
+            "created": "2017-08-23T07:21:31.313Z",
+            "updated": "2017-08-23T08:34:01.129Z",
+            "metadata": null,
+            "next_step": {
+                "behavior": "jump_to",
+                "selector": "condition",
+                "dialog_node": "Hello"
+            },
+            "conditions": "welcome",
+            "description": null,
+            "dialog_node": "Welcome",
+            "previous_sibling": null
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "Goodbye! Thank you for using TJ Bot!"
+                    ],
+                    "selection_policy": "sequential"
+                }
+            },
+            "parent": null,
+            "context": null,
+            "created": "2017-08-23T07:22:34.453Z",
+            "updated": "2017-08-23T07:23:01.807Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "#goodbye",
+            "description": null,
+            "dialog_node": "Goodbye",
+            "previous_sibling": "Hello"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "Hello. I am TJ Bot. Nice to meet you!"
+                    ],
+                    "selection_policy": "sequential"
+                }
+            },
+            "parent": null,
+            "context": null,
+            "created": "2017-08-23T08:33:30.765Z",
+            "updated": "2017-08-23T08:37:31.216Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "#hello",
+            "description": null,
+            "dialog_node": "Hello",
+            "previous_sibling": "Welcome"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "I didn't understand what you're saying. You can try rephrasing your sentence.",
+                        "Can you reword your statement? I don't understand what you're saying.",
+                        "I didn't get your meaning.",
+                        "Me no understand your england!"
+                    ],
+                    "selection_policy": "random"
+                }
+            },
+            "parent": null,
+            "context": null,
+            "created": "2017-08-23T07:21:31.313Z",
+            "updated": "2017-08-23T08:32:49.870Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "anything_else",
+            "description": null,
+            "dialog_node": "Anything else",
+            "previous_sibling": "Lights On"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "I'm lowering my arm"
+                    ],
+                    "selection_policy": "sequential"
+                },
+                "action": {
+                    "servo": true,
+                    "movement": "@movements"
+                }
+            },
+            "parent": "Move Arm",
+            "context": null,
+            "created": "2017-08-23T08:01:21.724Z",
+            "updated": "2017-08-23T08:19:19.752Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "@movements:lowerarm",
+            "description": null,
+            "dialog_node": "node_9_1503475281034",
+            "previous_sibling": "node_7_1503474908716"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "I'm raising my arm. Salute!"
+                    ],
+                    "selection_policy": "sequential"
+                },
+                "action": {
+                    "servo": true,
+                    "movement": "@movements"
+                }
+            },
+            "parent": "Move Arm",
+            "context": null,
+            "created": "2017-08-23T08:02:37.302Z",
+            "updated": "2017-08-23T08:19:51.240Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "@movements:raisearm",
+            "description": null,
+            "dialog_node": "node_10_1503475356952",
+            "previous_sibling": "node_9_1503475281034"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "I'm waving my arm. Hello!"
+                    ],
+                    "selection_policy": "sequential"
+                },
+                "action": {
+                    "servo": true,
+                    "movement": "wave"
+                }
+            },
+            "parent": "Move Arm",
+            "context": null,
+            "created": "2017-08-23T07:58:20.385Z",
+            "updated": "2017-08-23T08:03:16.077Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "true",
+            "description": null,
+            "dialog_node": "node_8_1503475099227",
+            "previous_sibling": "node_10_1503475356952"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "Putting my arm in the backward position. Ouch!"
+                    ],
+                    "selection_policy": "sequential"
+                },
+                "action": {
+                    "servo": true,
+                    "movement": "@movements"
+                }
+            },
+            "parent": "Move Arm",
+            "context": null,
+            "created": "2017-08-23T07:55:09.841Z",
+            "updated": "2017-08-23T08:18:43.004Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "@movements:armback",
+            "description": null,
+            "dialog_node": "node_7_1503474908716",
+            "previous_sibling": null
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "Turning off the light"
+                    ],
+                    "selection_policy": "sequential"
+                },
+                "action": {
+                    "led": "off"
+                }
+            },
+            "parent": "Lights On",
+            "context": null,
+            "created": "2017-08-23T08:12:07.223Z",
+            "updated": "2017-08-23T08:24:13.210Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "@on_off:off",
+            "description": null,
+            "dialog_node": "node_11_1503475926867",
+            "previous_sibling": null
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "Turning on the @colors light"
+                    ],
+                    "selection_policy": "sequential"
+                },
+                "action": {
+                    "led": "on",
+                    "color": "@colors"
+                }
+            },
+            "parent": "Lights On",
+            "context": null,
+            "created": "2017-08-23T07:35:39.499Z",
+            "updated": "2017-08-23T08:15:11.023Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "@colors",
+            "description": null,
+            "dialog_node": "node_4_1503473738357",
+            "previous_sibling": "node_11_1503475926867"
+        },
+        {
+            "title": null,
+            "output": {
+                "text": {
+                    "values": [
+                        "Turning on the light"
+                    ],
+                    "selection_policy": "sequential"
+                },
+                "action": {
+                    "led": "on",
+                    "color": "@colors"
+                }
+            },
+            "parent": "Lights On",
+            "context": null,
+            "created": "2017-08-23T07:38:23.492Z",
+            "updated": "2017-08-23T08:15:18.336Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": "true",
+            "description": null,
+            "dialog_node": "node_5_1503473902350",
+            "previous_sibling": "node_4_1503473738357"
+        },
+        {
+            "type": "event_handler",
+            "title": null,
+            "output": null,
+            "parent": "slot_15_1503476583206",
+            "context": null,
+            "created": "2017-08-23T08:23:05.353Z",
+            "updated": "2017-08-23T08:23:05.353Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": null,
+            "event_name": "input",
+            "description": null,
+            "dialog_node": "handler_16_1503476583206",
+            "previous_sibling": null
+        },
+        {
+            "type": "event_handler",
+            "title": null,
+            "output": {},
+            "parent": "slot_15_1503476583206",
+            "context": null,
+            "created": "2017-08-23T08:23:07.933Z",
+            "updated": "2017-08-23T08:23:07.933Z",
+            "metadata": null,
+            "next_step": null,
+            "conditions": null,
+            "event_name": "focus",
+            "description": null,
+            "dialog_node": "handler_17_1503476583206",
+            "previous_sibling": "handler_16_1503476583206"
+        },
+        {
+            "type": "slot",
+            "title": null,
+            "output": null,
+            "parent": "node_11_1503475926867",
+            "context": null,
+            "created": "2017-08-23T08:23:03.566Z",
+            "updated": "2017-08-23T08:23:03.566Z",
+            "metadata": null,
+            "variable": " ",
+            "next_step": null,
+            "conditions": null,
+            "description": null,
+            "dialog_node": "slot_15_1503476583206",
+            "previous_sibling": null
+        }
+    ],
+    "workspace_id": "5e6f5088-d6b6-445f-8aba-736d9c399322",
+    "counterexamples": [],
+    "learning_opt_out": false
+}
