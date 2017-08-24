@@ -40,7 +40,7 @@ var tjConfig = {
 };
 
 // instantiate our TJBot!
-var tj = new TJBot(hardware, tjConfig, credentials);
+var tj = new TJBot(config.hardware || hardware, tjConfig, credentials);
 
 // Create a bot that uses 'polling' to fetch new updates 
 const telegram = new TelegramBot(credentials.telegram.token, { polling: true });
